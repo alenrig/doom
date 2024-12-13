@@ -47,6 +47,13 @@
 
 (setq projectile-project-search-path '("~/Developer/" "~/Developer/work/" "~/Developer/work/cicd/" "~/Developer/work/docker-images/"))
 
+(setq lsp-pylsp-plugins-flake8-enabled nil)
+(setq lsp-pylsp-plugins-pylint-enabled nil)
+(setq lsp-pylsp-plugins-pyflakes-enabled nil)
+(setq lsp-pylsp-plugins-pydocstyle-enabled nil)
+(setq lsp-pylsp-plugins-black-enabled nil)
+(setq lsp-pylsp-plugins-ruff-enabled t)
+
 ;; Whenever you reconfigure a package, make sure to wrap your config in an
 ;; `after!' block, otherwise Doom's defaults may override your settings. E.g.
 ;;
