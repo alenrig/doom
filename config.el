@@ -45,7 +45,11 @@
 ;; change `org-directory'. It must be set before org loads!
 (setq org-directory "~/org/")
 
-(setq projectile-project-search-path '("~/Developer/" "~/Developer/work/" "~/Developer/work/cicd/" "~/Developer/work/docker-images/"))
+(setq projectile-project-search-path
+      '("~/Developer/"
+        "~/Developer/work/"
+        "~/Developer/work/cicd/"
+        "~/Developer/work/docker-images/"))
 
 (setq lsp-pylsp-plugins-flake8-enabled nil)
 (setq lsp-pylsp-plugins-pylint-enabled nil)
