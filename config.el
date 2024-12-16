@@ -38,22 +38,28 @@
 (setq doom-theme 'doom-dracula)
 
 (setq auth-sources '("~/.authinfo"))
-(push '("gitlab.lsnext.ru"               ; GITHOST
-        "gitlab.lsnext.ru/api/v4"        ; APIHOST
-        "gitlab.lsnext.ru"               ; WEBHOST and INSTANCE-ID
-        forge-gitlab-repository)    ; CLASS
-      forge-alist)
+(setq
+ forge-alist
+ '(("gitlab.lsnext.ru" "gitlab.lsnext.ru/api/v4" "gitlab.lsnext.ru" forge-gitlab-repository)
+   ("github.com" "api.github.com" "github.com" forge-github-repository)
+   ("gitlab.com" "gitlab.com/api/v4" "gitlab.com" forge-gitlab-repository))
+ )
 
 (use-package all-the-icons
   :if (display-graphic-p))
 
-;; This determines the style of line numbers in effect. If set to `nil', line
-;; numbers are disabled. For relative line numbers, set this to `relative'.
-(setq display-line-numbers-type t)
-
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
 (setq org-directory "~/org/")
+
+
+;; ===== Programming =====
+
+(add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
+
+(setq-default display-line-numbers-type `relative)
+(setq-default display-fill-column-indicator-column 80)
+(add-hook 'prog-mode-hook 'display-fill-column-indicator-mode)
 
 (setq projectile-project-search-path
       '("~/Developer/"
@@ -61,6 +67,7 @@
         "~/Developer/work/cicd/"
         "~/Developer/work/docker-images/"))
 
+;; ----- Python -----
 (use-package lsp-pyright
   :ensure t
   :custom (lsp-pyright-langserver-command "pyright") ;; or basedpyright
