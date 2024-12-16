@@ -7,6 +7,7 @@
 
 ;; To install SOME-PACKAGE from MELPA, ELPA or emacsmirror:
 ;; (package! some-package)
+(package! treemacs-all-the-icons)
 (package! gitlab-ci-mode)
 
 (package! lsp-pyright)
