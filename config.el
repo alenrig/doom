@@ -37,6 +37,13 @@
 ;; `load-theme' function. This is the default:
 (setq doom-theme 'doom-dracula)
 
+(setq auth-sources '("~/.authinfo"))
+(push '("gitlab.lsnext.ru"               ; GITHOST
+        "gitlab.lsnext.ru/api/v4"        ; APIHOST
+        "gitlab.lsnext.ru"               ; WEBHOST and INSTANCE-ID
+        forge-gitlab-repository)    ; CLASS
+      forge-alist)
+
 (use-package all-the-icons
   :if (display-graphic-p))
 
