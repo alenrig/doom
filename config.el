@@ -78,6 +78,10 @@
 ;; ----- Markdown -----
 (setq grip-preview-use-webkit t)
 
+;; ----- Dockerfile -----
+;; (setq lsp-diagnostics-provider :none)
+(add-hook 'dockerfile-mode-hook (lambda() (lsp-diagnostics-provider :none)))
+
 ;; Whenever you reconfigure a package, make sure to wrap your config in an
 ;; `after!' block, otherwise Doom's defaults may override your settings. E.g.
 ;;
