@@ -75,6 +75,11 @@
                           (require 'lsp-pyright)
                           (lsp))))  ; or lsp-deferred
 
+;; ----- K8S -----
+(use-package kubel
+  :after (vterm)
+  :config (kubel-vterm-setup))
+
 ;; ----- Markdown -----
 (setq grip-preview-use-webkit t)
 

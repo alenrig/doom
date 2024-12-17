@@ -1,3 +1,5 @@
 (package! treemacs-all-the-icons)
-(package! lsp-pyright)
 (package! gitlab-ci-mode)
+(package! lsp-pyright)
+(package! kubel)
+(package! kubel-evil)
