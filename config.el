@@ -17,12 +17,7 @@
 ;;   presentations or streaming.
 ;; - `doom-symbol-font' -- for symbols
 ;; - `doom-serif-font' -- for the `fixed-pitch-serif' face
-;;
-;; See 'C-h v doom-font' for documentation and more examples of what they
-;; accept. For example:
-;;
-;(setq doom-font (font-spec :family "Fira Code" :size 16 :weight 'semi-light)
-;      doom-variable-pitch-font (font-spec :family "Fira Sans" :size 16))
+
 (setq doom-font (font-spec :family "Hack" :size 20)
       doom-variable-pitch-font (font-spec :family "Hack"))
 
@@ -48,15 +43,17 @@
 (use-package all-the-icons
   :if (display-graphic-p))
 
-;; If you use `org' and don't want your org files in the default location below,
-;; change `org-directory'. It must be set before org loads!
-(setq org-directory "~/org/")
+;; ===== Org =====
+(after! org
+  (require 'org-tempo)
+  (set-popup-rule! "^ \\*Org tags" :side 'bottom :size 0.80 :select t :ttl nil)
+  (setq org-directory "~/Documents/org"
+        org-fontify-done-headline t))
 
 
 ;; ===== Programming =====
 
 (add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
-
 (setq-default display-line-numbers-type `relative)
 (setq-default display-fill-column-indicator-column 80)
 (add-hook 'prog-mode-hook 'display-fill-column-indicator-mode)
