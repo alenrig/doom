@@ -40,9 +40,6 @@
    ("gitlab.com" "gitlab.com/api/v4" "gitlab.com" forge-gitlab-repository))
  )
 
-(use-package all-the-icons
-  :if (display-graphic-p))
-
 ;; ===== Org =====
 (after! org
   (require 'org-tempo)
