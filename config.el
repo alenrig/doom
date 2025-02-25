@@ -32,6 +32,8 @@
 ;; `load-theme' function. This is the default:
 (setq doom-theme 'doom-dracula)
 
+(setq guess-language-languages '(en ru))
+
 (setq auth-sources '("~/.authinfo"))
 (setq
  forge-alist
